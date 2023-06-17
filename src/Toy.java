@@ -80,26 +80,27 @@ public class Toy {
     public static void get(List<Toy> toys) {
         Random rnd = new Random();
         Scanner iScanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("Для выхода из программы введите '1', для розыгрыша введите любой другой " +
-                    "символ для розыгрыша: ");
-            String input = iScanner.nextLine();
-            if (input.equals("1")) break;
-            int percent = 0;
-            try (FileWriter fw = new FileWriter("file.txt", false)) {
+        try (FileWriter fw = new FileWriter("file.txt", false)) {
+            while (true) {
+                System.out.println("Для выхода из программы введите '1', для розыгрыша введите любой другой " +
+                        "символ для розыгрыша: ");
+                String input = iScanner.nextLine();
+                if (input.equals("1")) break;
+                int percent = 0;
                 int n = rnd.nextInt(100);
+                System.out.println(n);
                 for (int i = 0; i < toys.size(); i++) {
                     if (n < percent + toys.get(i).getWeight()) {
+                        //System.out.println(percent);
                         System.out.println(toys.get(i).getName());
                         fw.append(toys.get(i).getName());
                         fw.append("\n");
                         break;
-                    } else percent = toys.get(i).getWeight();
+                    } else percent = percent + toys.get(i).getWeight();
                 }
-            } catch (IOException ex) {
-                System.out.println(ex.getMessage());
             }
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
         }
-        iScanner.close();
     }
 }
