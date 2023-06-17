@@ -1,8 +1,9 @@
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Toys {
+public class Toys implements Serializable{
     private List<Toy> toys;
 
     public Toys(List<Toy> toys) {
@@ -30,5 +31,25 @@ public class Toys {
                 System.out.println("Ошибка ввода!");
             }
         }
+    }
+
+    public void saveData() throws IOException {
+        FileOutputStream fos = new FileOutputStream("list.txt");
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(this);
+        oos.close();
+    }
+
+    public Toys loadData() throws IOException {
+        FileInputStream fis = new FileInputStream("list.txt");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        Toys toys = null;
+        try {
+            toys = (Toys) ois.readObject();
+        } catch (ClassNotFoundException e) {
+            System.out.println("Файл не найден!");;
+        }
+        ois.close();
+        return toys;
     }
 }

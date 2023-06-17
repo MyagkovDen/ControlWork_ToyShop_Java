@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.*;
 
-public class Toy {
+public class Toy implements Serializable {
     private int id;
     private String name;
     private int quantity;
