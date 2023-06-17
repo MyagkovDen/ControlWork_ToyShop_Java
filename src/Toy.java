@@ -1,5 +1,3 @@
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.*;
 
 public class Toy {
@@ -13,10 +11,6 @@ public class Toy {
         this.name = name;
         this.weight = weight;
         this.quantity = quantity;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getName() {
@@ -60,6 +54,7 @@ public class Toy {
 
     @Override
     public String toString() {
-        return String.format("\nN %d: %s %d процентов, %d штук ", id, name, weight, quantity);
+        //return String.format("\nid: %d; name: %s; weight: %d; quantity: %d", id, name, weight, quantity);
+        return String.format("%s\n", name);
     }
 }

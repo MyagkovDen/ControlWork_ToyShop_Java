@@ -10,40 +10,39 @@ public class Winnings {
     }
 
     public Winnings() {
-        this.winnings = new LinkedList<Toy>();
-    }
-
-    public Queue<Toy> getWinnings() {
-        return winnings;
+        this.winnings = new LinkedList<>();
     }
 
     @Override
     public String toString() {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for (Toy toy : winnings) {
-            res += toy.getName().toString();
+            res.append(toy);
         }
-        return res;
+        return res.toString();
     }
 
-    public void get(Toys toys, Scanner iScanner) {
+    public void get(Toys toys, Scanner iScanner) throws IOException {
         Random rnd = new Random();
         int border = 100;
         while (true) {
-            System.out.println("Для выхода из программы введите '1', для розыгрыша введите любой другой символ: ");
+            System.out.println("Для выхода в главное меню введите '1', для розыгрыша введите любой другой символ: ");
             String input = iScanner.nextLine();
             if (input.equals("1")) {
-                //print();
                 break;
             }
             int percent = 0;
+            if (border == 0) {
+                System.out.println("Игрушки закончились!");
+                break;
+            }
             int n = rnd.nextInt(border);
             for (Toy toy : toys.getList()) {
                 if (n < percent + toy.getWeight()) {
                     if (toy.getQuantity() > 0) {
                         winnings.add(toy);
                         toy.setQuantity(toy.getQuantity() - 1);
-                        if (toy.getQuantity() == 0) border = border - toy.getQuantity();
+                        if (toy.getQuantity() == 0) border = border - toy.getWeight();
                         break;
                     }
                 } else percent = percent + toy.getWeight();
@@ -51,20 +50,8 @@ public class Winnings {
         }
     }
 
-    public void print(String file) {
-        try (FileWriter fw = new FileWriter(file, false)) {
-            for (Toy item : winnings
-            ) {
-                fw.append(item.getName());
-                fw.append("\n");
-            }
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }
+    public void giveOut(FileWriter fw) throws IOException {
+        if (winnings.size() > 0) fw.append(winnings.poll().toString());
+        else System.out.println("Призы закончились!");
     }
-
-    public void giveOut() {
-        winnings.poll();
-    }
-
 }

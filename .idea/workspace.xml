@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b6e09ea-f011-4dd7-8750-7ea32b2ccdfc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ToysShop.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Winnings.java" afterDir="false" />
+    <list default="true" id="0b6e09ea-f011-4dd7-8750-7ea32b2ccdfc" name="Changes" comment="task completed">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Toy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Toy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Toys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Toys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Winnings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Winnings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +54,28 @@
       <option name="project" value="LOCAL" />
       <updated>1686850020821</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="drawing fulfilled">
+      <created>1686991429462</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686991429462</updated>
+    </task>
+    <task id="LOCAL-00003" summary="before print">
+      <created>1687005249054</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687005249054</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="drawing fulfilled" />
+    <MESSAGE value="before print" />
+    <MESSAGE value="task completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="task completed" />
   </component>
 </project>
