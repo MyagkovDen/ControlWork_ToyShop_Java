@@ -18,6 +18,15 @@ public class Toys implements Serializable{
         return toys;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder res = new StringBuilder();
+        for (Toy toy : toys) {
+            res.append(toy);
+        }
+        return res.toString();
+    }
+
     public void put(Scanner iScanner) {
         System.out.println("Введите через пробел id, название, удельный вес и количество игрушки или введите 'стоп' " +
                 "для выхода в главное меню:");
@@ -38,6 +47,7 @@ public class Toys implements Serializable{
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(this);
         oos.close();
+        System.out.println("Список игрушек сохранен");
     }
 
     public Toys loadData() throws IOException {
@@ -50,6 +60,26 @@ public class Toys implements Serializable{
             System.out.println("Файл не найден!");;
         }
         ois.close();
+        System.out.println("Загружен список игрушек:");
+        System.out.println(toys);
         return toys;
+    }
+    public void changeWeight(Scanner iScanner) {
+        while (true) {
+            System.out.println("Введите id игрушки или введите 'стоп' для возвращения в главное меню:");
+            String input = iScanner.nextLine();
+            if (input.equals("стоп")) break;
+            System.out.println("Введите новый 'вес' игрушки:");
+            String newWeight = iScanner.nextLine();
+            System.out.println(input);
+            for (Toy toy : toys
+            ) {
+                if (toy.getId() == Integer.parseInt(input)) {
+                    System.out.println("+++");
+                    toy.setWeight(Integer.parseInt(newWeight));
+                    System.out.println(toy.getWeight());
+                }
+            }
+        }
     }
 }

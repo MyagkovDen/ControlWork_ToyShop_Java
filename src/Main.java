@@ -15,20 +15,23 @@ public class Main {
         Scanner iScanner = new Scanner(System.in);
         try (FileWriter fw = new FileWriter("file.txt", false)) {
             while (true) {
-                System.out.println("\nДля создания списка игрушек или добавления игрушки в список нажмите '1'" +
-                        "\nДля загрузки списка игрушек нажмите '2'" +
-                        "\nДля сохранения списка игрушек нажмите '3'" +
-                        "\nДля создания списка призов (розыгрыша) нажмите '4'" +
-                        "\nДля выдачи приза нажмите '5'" +
-                        "\nДля выхода из программы нажмите  '6'");
+                System.out.println("\nДля создания списка игрушек или добавления игрушки в список " +
+                        "нажмите '1'" +
+                        "\nДля изменения 'веса' игрушки нажмите '2'" +
+                        "\nДля загрузки списка игрушек нажмите '3'" +
+                        "\nДля сохранения списка игрушек нажмите '4'" +
+                        "\nДля создания списка призов (розыгрыша) нажмите '5'" +
+                        "\nДля выдачи приза нажмите '6'" +
+                        "\nДля выхода из программы нажмите  '7'");
                 String input = iScanner.nextLine();
                 switch (input) {
                     case "1" -> toys.put(iScanner);
-                    case "2" -> toys = toys.loadData();
-                    case "3" -> toys.saveData();
-                    case "4" -> winnings.get(toys, iScanner);
-                    case "5" -> winnings.giveOut(fw);
-                    case "6" -> {
+                    case "2" -> toys.changeWeight(iScanner);
+                    case "3" -> toys = toys.loadData();
+                    case "4" -> toys.saveData();
+                    case "5" -> winnings.get(toys, iScanner);
+                    case "6" -> winnings.giveOut(fw);
+                    case "7" -> {
                         iScanner.close();
                         fw.flush();
                         return;

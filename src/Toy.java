@@ -14,6 +14,10 @@ public class Toy implements Serializable {
         this.quantity = quantity;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
@@ -55,7 +59,7 @@ public class Toy implements Serializable {
 
     @Override
     public String toString() {
-        //return String.format("\nid: %d; name: %s; weight: %d; quantity: %d", id, name, weight, quantity);
-        return String.format("%s\n", name);
+        return String.format("\nid: %d; name: %s; weight: %d; quantity: %d", id, name, weight, quantity);
+        //return String.format("%s\n", name);
     }
 }

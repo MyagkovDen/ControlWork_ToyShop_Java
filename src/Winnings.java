@@ -48,10 +48,17 @@ public class Winnings {
                 } else percent = percent + toy.getWeight();
             }
         }
+        System.out.println(winnings);
     }
 
     public void giveOut(FileWriter fw) throws IOException {
-        if (winnings.size() > 0) fw.append(winnings.poll().toString());
+        if (winnings.size() > 0) {
+            Toy prize = winnings.poll();
+            System.out.println(prize);
+            fw.append(prize.toString());
+        }
         else System.out.println("Призы закончились!");
     }
+
+
 }
