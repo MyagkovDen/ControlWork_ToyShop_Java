@@ -52,11 +52,7 @@ public class Winnings {
     }
 
     public void giveOut(FileWriter fw) throws IOException {
-        if (winnings.size() > 0) {
-            Toy prize = winnings.poll();
-            System.out.println(prize);
-            fw.append(prize.toString());
-        }
+        if (winnings.size() > 0) {fw.append(winnings.poll().toString());}
         else System.out.println("Призы закончились!");
     }
 

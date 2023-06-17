@@ -75,9 +75,8 @@ public class Toys implements Serializable{
             for (Toy toy : toys
             ) {
                 if (toy.getId() == Integer.parseInt(input)) {
-                    System.out.println("+++");
                     toy.setWeight(Integer.parseInt(newWeight));
-                    System.out.println(toy.getWeight());
+                    //System.out.println(toy.getWeight());
                 }
             }
         }
